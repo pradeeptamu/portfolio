@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
+/* 1. Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* 2. Make nav sticky */
+main>.title-section {
+  position: sticky;
+  top: 5em;
+  align-self: start;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title-section h1{
+  margin: 0;
+  font-size: 48px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* 3. ScrollSpy active styles (see JS tab for activation) */
+.section-nav li.active>a {
+  color: white;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+/* Sidebar Navigation */
+.section-nav {
+  padding-left: 0;
+}
+
+.section-nav a {
+  text-decoration: none;
+  display: block;
+  padding: .125rem 0;
+  color: #ccc;
+  transition: font-size 0.3s ease;
+  /* 💡 This small transition makes setting of the active state smooth */
+}
+
+.section-nav a:hover{
+  font-size: 30px;
+  font-weight: 500;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/** Poor man's reset **/
+* {
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html,
+body {
+  background: linear-gradient(to bottom, #0f172a, #1e2a47);
+  font-family: 'Bricolage Grotesque';
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/** page layout **/
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 100em;
+  width: 80%;
+  margin: 5% auto 0 auto;
+}
+
+/** enlarge the sections for this demo, so that we have a long scrollable page **/
+section {
+  padding-bottom: 3rem;
+  color: white;
+}
+
+.intro-section{
+  color: #E2E8F0;
+}
+
+.section-nav{
+  margin: 10vh 0;
+}
+
+.contact-section i{
+ font-size: 1.5rem;
+ color: white;
+ margin-right: 1rem;
+}
+
+.experience, .project-section{
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  margin-bottom: 4vh;
+}
+
+.contents span{
+    border-radius: 15px;
+      padding: 5px 10px;
+      color: rgb(94 234 212);
+      background-color: rgba(45, 212, 191, .1);
+      margin: 0 10px 10px 0;
+}
+
+.company-title{
+  margin-top: 0;
+}
+
+.skills{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-section .image{
+  padding-right: 1em;
+}
+
+.project-section img{
+  height: auto;
+    max-width: 100%;
+    color: transparent;
+    opacity: 0.8;
+    border: 2px solid;
+    border-radius: 6px;
+}
+
+.description{
+  margin-bottom: 1em;
 }
